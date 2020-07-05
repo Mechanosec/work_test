@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\User;
 
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AuthRequest extends FormRequest
+class AddToEventUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,16 +26,14 @@ class AuthRequest extends FormRequest
     public function rules()
     {
         return [
-            'login'    => 'required|string',
-            'password'    => 'required|string',
+            'eventId'    => 'required|int',
         ];
     }
 
     public function messages()
     {
         return [
-            'login.required'   => 'Поле "логин" обязательно для заполнения',
-            'password.required'   => 'Поле "пароль" обязательно для заполнения',
+            'eventId.required'   => 'Поле "id евента" обязательно для заполнения',
         ];
     }
 }

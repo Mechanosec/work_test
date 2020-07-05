@@ -17,7 +17,7 @@ class ApiAuth
      */
     public function handle($request, Closure $next)
     {
-        $authToken = $request->header('auth_token');
+        $authToken = $request->header('auth-token');
 
         // Auth user
         if(!is_null($authToken)) {

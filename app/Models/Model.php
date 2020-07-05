@@ -14,9 +14,21 @@ class Model extends BaseModel
     /**
      * @param $field
      * @param $value
+     * @return Model
      */
     public static function findBy($field, $value)
     {
         return self::where($field, $value)->first();
+    }
+
+    /**
+     * Поиск  модели по произвольному полю или вернуть новый экземпляр, если не найден
+     * @param $field
+     * @param $value
+     * @return Model
+     */
+    public static function findByOrNew($field, $value)
+    {
+        return static::findBy($field, $value) ?: new static;
     }
 }

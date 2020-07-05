@@ -12,7 +12,7 @@ class AuthService
     public function login(AuthRequest $request)
     {
         $admin = Admin::where('login', $request->get('login'))->where('password', md5($request->get('password')))->first();
-        if ($admin->exists()) {
+        if (!is_null($admin)) {
             return $admin->auth_token;
         }
 

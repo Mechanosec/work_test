@@ -29,7 +29,7 @@ class Controller extends BaseController
                     'result' => [
                         'status' => true,
                     ],
-                    'auth_token' => $data,
+                    'auth-token' => $data,
                 ];
                 break;
 
