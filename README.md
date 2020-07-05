@@ -1,9 +1,11 @@
-composer install
+    composer install
+    cp .env.example .env
+    php artisan key:generate
 
 ##### для поднятия таблиц
     php artisan migrate
 ##### для заполнения таблицы админа
-    php artisan db:seed --class=AdminTAbleSeeder
+    php artisan db:seed --class=AdminTableSeeder
 ##### для заполнения таблицы мероприятий
     php artisan db:seed --class=EventTableSeeder
 ##### для выполнения тестов
